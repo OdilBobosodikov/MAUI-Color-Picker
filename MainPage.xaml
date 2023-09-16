@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColorPicker.MainPage">
+
+    <ContentPage.Resources>
+        <Color x:Key="Prime">#1E90FF</Color>
+        <Color x:Key="PrimeCombination">#b5b565</Color>
+        <Color x:Key="MenuBackground">#fcfcf5</Color>
+        <Color x:Key="Secondary">#1560BD</Color>
+        <Color x:Key="Third">#0b3d8a</Color>
+    </ContentPage.Resources>
+
+    <Grid x:Name="Container"
+          BackgroundColor="Black">
+        <Frame Margin="10,0" VerticalOptions="Center" BackgroundColor="{StaticResource MenuBackground}">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label FontAttributes="Bold"
+                       FontSize="Large"
+                       HorizontalOptions="Center"
+                       Text="Color Picker"
+                       TextColor="{StaticResource Third}"/>
+
+                <Label Text="RED"
+                       FontAttributes="Bold"
+                       Padding="15, 0"
+                       TextColor="OrangeRed"/>
+
+                <Slider x:Name="Red"
+                        Margin="0, -15, 0, 0"
+                        ThumbColor="{StaticResource Primary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        MaximumTrackColor="{StaticResource PrimeCombination}"
+                        ValueChanged="Color_ValueChanged"/>
+
+                <Label Text="GEEN"
+                       FontAttributes="Bold"
+                       Padding="15, 0"
+                       TextColor="ForestGreen"/>
+
+                <Slider x:Name="Green"
+                        Margin="0, -15, 0, 0"
+                        ThumbColor="{StaticResource Primary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        MaximumTrackColor="{StaticResource PrimeCombination}"
+                        ValueChanged="Color_ValueChanged"/>
+
+                <Label Text="BLUE"
+                       FontAttributes="Bold"
+                       Padding="15, 0"
+                       TextColor="{StaticResource Primary}"/>
+
+                <Slider x:Name="Blue"
+                        Margin="0, -15, 0, 0"
+                        ThumbColor="{StaticResource Primary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        MaximumTrackColor="{StaticResource PrimeCombination}"
+                        ValueChanged="Color_ValueChanged"/>
+
+                <Label Text="ALPHA"
+                       FontAttributes="Bold"
+                       Padding="15, 0"
+                       TextColor="Black"
+                       />
+
+                <Slider x:Name="Alpha"
+                        Margin="0, -15, 0, 0"
+                        ThumbColor="{StaticResource Primary}"
+                        MinimumTrackColor="{StaticResource Secondary}"
+                        MaximumTrackColor="{StaticResource PrimeCombination}"
+                        ValueChanged="Color_ValueChanged"/>
+
+                <Frame CornerRadius="25" HorizontalOptions="Center">
+                    <HorizontalStackLayout>
+                        <Label
+                            x:Name="lblHex"
+                            HorizontalTextAlignment="End"
+                            Text="HEX Value: #00000000"
+                            VerticalOptions="Center" />
+                        <ImageButton
+                            Margin="10,0,0,0"
+                            HeightRequest="25"
+                            Source="copy.svg"
+                            VerticalOptions="Center"
+                            WidthRequest="25" 
+                            Clicked="ImageButton_Clicked"
+                            />
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button x:Name="BtnRandom"
+                        BackgroundColor="Black"
+                        Text="Generate Random color"
+                        Clicked="BtnRandom_Clicked"/>
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+
+</ContentPage>
